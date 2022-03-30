@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <meta property="og:title" content="Land and Property Data proof of concept">
+    <meta property="og:locale" content="en_GB">
+    <link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      <h1><a href="/"></a></h1>
+      {% block content %}{% endblock %}
+    </div>
+    <footer>
+      <p>This is a demonstration service built to test the proof of concept <a href="https://land-property-platform.herokuapp.com">Land and property platform</a>. it is not yet linked up to the API.</p>
+    </footer>
+  </body>
+</html>
