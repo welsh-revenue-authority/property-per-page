@@ -69,27 +69,32 @@
                   <label for="edit-global-keywords--2">Search</label>
                     
             
-            <input data-drupal-selector="edit-global-keywords" type="text" id="edit-global-keywords--2" name="global-keywords" value="" size="30" maxlength="128" class="form-text">
+            <input data-drupal-selector="edit-global-keywords" type="text" id="edit-global-keywords--2" name="global-keywords" value="{{search_term}}" size="30" maxlength="128" class="form-text">
           
           
                               </div>
           <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions--2--5A6GNUj7Ykc">
             <input data-drupal-selector="edit-submit-global-keyword-search-2" type="submit" id="edit-submit-global-keyword-search--2" value="Search website" class="button js-form-submit form-submit">
-          
           </div>
-          
-          
           </form>
-          
             </div>
-              
-            
-            
-            
-          
-            
-            <div class="index-list__results no-search-results"><span class="index-list__count">0</span> results</div><p><strong>Try:</strong></p>
-            <ul><li>double-checking your spelling</li><li>searching again using different words</li></ul>
+            <div style="clear:both">
+              <p>
+                You searched for a location. Click on an address to check publicly available information such as tax rates or bin collection days for properties in {{search_term}}
+              </p>
+            </div>
+            <ul class="index-list__items">
+              {% for property in properties %}
+              <li class="index-list__item">
+                <div role="article" about="https://gov.wales/report-tax-avoidance-or-evasion">  
+                  <div class="index-list__title">
+                    <a href="/property/{{property['uprn']}}"><span>{{property['address']}}</span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
             
           
           
