@@ -1,3 +1,8 @@
-html { 
-  text-align:center;
-}
+.page-node-type-global-keyword-search .page-header h1 {
+  border: none;
+  margin: 0;
+  font-size: 30px;
+  font-size: 1.875rem;
+  line-height: 34px;
+  line-height: 2.125rem;
+  }
