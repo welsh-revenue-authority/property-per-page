@@ -15,7 +15,7 @@
           <nav class="breadcrumb container-fluid">
             <p class="visually-hidden">You are here:</p>
             <ul>
-                                                                              <li class="first parent">
+                        <li class="first parent">
                             <a href="/">Home</a>
                         </li>
                                                                 <li class="last">
@@ -29,26 +29,31 @@
           <div data-drupal-messages-fallback="" class="hidden"></div>
           <div id="block-govwales-page-title">
             
-              
-                
-          
                 <header class="page-header">
-                        <h1 class="page-header__title">Search results for</h1>
+                  <h1 class="page-header__title">{{data['identifiers']['address']}}</h1>
                 </header>
           
-          
-          
+                <div id="map"></div>
+                <ul style="margin-top:2em">
+                  <li>Land Transaction Tax zone: {{data['attributes']['tax_zone']}}</li>
+                  <li>Council Tax band: C</li>
+                  <li>Bin collection: Wednesday</li>
+                  <li>Local authority: <a href="#">Clwyd</a></li>
+                </ul>
+                <script>
+                  
+                  var map = L.map('map').setView([53.2194378,-2.9881433], 13);
+                  var marker = L.marker([53.2194378,-2.9881433]).addTo(map);
+
+
+                  L.tileLayer( 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+                      subdomains: ['a','b','c']
+                  }).addTo( map );
+                </script>
             </div>
           
             </div>
-          
-            
-          
-          
-            
-            
-          
-            
           
             
             <div class="region-content">
@@ -63,39 +68,7 @@
             
           
                   <div class="views-exposed-form components__form" data-drupal-selector="views-exposed-form-global-keyword-search-search-page" id="block-exposedformglobal-keyword-searchsearch-page">
-                <form action="/search" method="get" id="views-exposed-form-global-keyword-search-search-page" accept-charset="UTF-8">
-            <div class="js-form-item form-item js-form-type-textfield form-item-global-keywords js-form-item-global-keywords">
-                  <label for="edit-global-keywords--2">Search</label>
-                    
-            
-            <input data-drupal-selector="edit-global-keywords" type="text" id="edit-global-keywords--2" name="global-keywords" value="{{search_term}}" size="30" maxlength="128" class="form-text">
-          
-                              </div>
-          <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions--2--5A6GNUj7Ykc">
-            <input data-drupal-selector="edit-submit-global-keyword-search-2" type="submit" id="edit-submit-global-keyword-search--2" value="Search website" class="button js-form-submit form-submit">
-          </div>
-          </form>
-            </div>
-            <div style="clear:both">
-              <p>
-                You searched for a location. Click on an address to check publicly available information such as tax rates or bin collection days for properties in {{search_term}}
-              </p>
-            </div>
-            <ul class="index-list__items">
-              {% for property in properties %}
-              <li class="index-list__item">
-                <div role="article" about="https://gov.wales/report-tax-avoidance-or-evasion">  
-                  <div class="index-list__title">
-                    <a href="/property/{{property['uprn']}}"><span>{{property['address']}}</span>
-                    </a>
-                  </div>
-                </div>
-              </li>
-            {% endfor %}
-          </ul>
-            
-          
-          
+               
             
             
           
@@ -122,5 +95,7 @@
           
               </div>
             </main>
+
+            
 
             {% endblock %}    
