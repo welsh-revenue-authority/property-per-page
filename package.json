@@ -1,0 +1,29 @@
+{
+    "name": "property-per-page",
+    "version": "0.0.1",
+    "description": "A poc showing a page per property",
+    "scripts": {
+      "build:stylesheets": "npm run nps build.stylesheets",
+      "watch:scss": "npm run nps watch.stylesheets",
+      "watch": "npm-run-all --parallel watch:*",
+      "nps": "nps -c ./node_modules/wra-frontend/package-scripts.js",
+      "postinstall": "npm run nps build.stylesheets"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/welsh-revenue-authority/property-per-page"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/welsh-revenue-authority/property-per-page/issues"
+    },
+    "dependencies": {
+      "wra-frontend": "https://gitpkg.now.sh/welsh-revenue-authority/wra-frontend/package?main"
+    },
+    "devDependencies": {
+      "npm-run-all": "^4.1.5",
+      "standardx": "^7.0.0"
+    }
+  }
+  

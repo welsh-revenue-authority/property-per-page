@@ -21,3 +21,9 @@ Start the flask app
 ```
 make run
 ```
+
+### Wales GEL
+
+Uses a different version of the Wales GEL than [wra-frontend](https://github.com/welsh-revenue-authority/wra-frontend).
+
+To do: investigate which should used.
